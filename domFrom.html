@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main1">
+        <form action="#" id="main2">
+            <button class="me we" id="main" onclick="rlad()">Basic Info</button>
+            <button onclick="Adress()" id="adres" class="we"> Address</button>
+            <button class="me" id="contacts" onclick="contct()">Contact</button>
+            <input class="me we" type="text" id="nme" placeholder="Name">
+            <input class="me we" type="number" placeholder="Age" id="agee">
+            <button class="me we" onclick="next()">Next</button>
+        </form>
+    </div>
+    <script>
+        man = document.getElementById("nme");
+        mon = document.getElementById("agee");
+        function Adress() {
+            const lbl = document.createElement("label");
+            document.body.appendChild(lbl)
+            lbl.innerText = "Address"
+            lbl.className = "we"
+            const btn = document.createElement("input");
+            document.body.appendChild(btn)
+            btn.className = "we"
+            btn.id="addressInp"
+            const slct = document.createElement("select");
+            document.body.appendChild(slct)
+            slct.appendChild(new Option("State"));
+            slct.appendChild(new Option("Delhi"));
+            slct.appendChild(new Option("Rajasthan"));
+            slct.appendChild(new Option("Haryana"));
+            slct.appendChild(new Option("Uttar Pradesh"));
+            slct.className = "we"
+            const prev = document.createElement("Button");
+            document.body.appendChild(prev)
+            prev.innerText = "Previous"
+            prev.className = "we"
+            prev.onclick = function prvos() {
+                const btn = document.createElement("button");
+                document.body.appendChild(btn)
+                btn.innerHTML = "Basic Info"
+                btn.className = "you they"
+                const btn1 = document.createElement("button");
+                document.body.appendChild(btn1)
+                btn1.innerHTML = "Address"
+                btn1.className = "they"
+                btn1.onclick = function hde() {
+                    Adress();
+                    hide22();
+                }
+                const btn2 = document.createElement("button");
+                document.body.appendChild(btn2)
+                btn2.innerHTML = "Contact"
+                btn2.className = "you"
+                btn2.onclick = function () {
+                    contct();
+                    hide33();
+                }
+                const adb1 = document.createElement("input");
+                document.body.appendChild(adb1)
+                adb1.placeholder = "Name"
+                adb1.value = man.value
+                adb1.className = "you they"
+                const adb2 = document.createElement("input");
+                document.body.appendChild(adb2)
+                adb2.placeholder = "Age"
+                adb2.className = "you they"
+                adb2.value=mon.value
+                const btn3 = document.createElement("button");
+                document.body.appendChild(btn3)
+                btn3.innerHTML = "Next"
+                btn3.className = "you they"
+                btn3.onclick = function manish(){
+                    Adress()
+                    hide22()
+                }
+                hide2()
+            }
+            const nxt = document.createElement("Button");
+            document.body.appendChild(nxt)
+            nxt.innerText = "Next"
+            nxt.className = "we"
+            nxt.onclick = function nxt() {
+                const btn2 = document.createElement("Button");
+                document.body.appendChild(btn2)
+                btn2.innerText = "Contact"
+                btn2.className = "me"
+                contct();
+            }
+            hide();
+        }
+        function hide22() {
+            var xs = document.getElementsByClassName("you")
+            console.table(xs)
+            for (let i = 0; i < xs.length; i++) {
+                xs[i].style.display = "none"
+
+            }
+        }
+        function hide33() {
+            var xz = document.getElementsByClassName("they")
+            console.table(xz)
+            for (let i = 0; i < xz.length; i++) {
+                xz[i].style.display = "none"
+
+            }
+        }
+        function hide() {
+            var s = document.getElementsByClassName("me")
+            for (i = 0; i < s.length; i++) {
+                s[i].style.display = "none"
+            }
+        }
+        function contct() {
+            const lbl = document.createElement("label");
+            document.body.appendChild(lbl)
+            lbl.innerText = "Mobile"
+            lbl.className = "me"
+            const adb = document.createElement("input");
+            document.body.appendChild(adb)
+            adb.className = "me"
+            const prev = document.createElement("Button");
+            document.body.appendChild(prev)
+            prev.innerText = "Previous"
+            prev.className = "me"
+            prev.onclick = function pre() {
+                Adress();
+                hide();
+            }
+            const submit = document.createElement("Button");
+            document.body.appendChild(submit)
+            submit.innerText = "Submitt"
+            submit.className = "me"
+            hide2();
+        }
+        function hide2() {
+            var s = document.getElementsByClassName("we")
+            for (i = 0; i < s.length; i++) {
+                console.log(s.length)
+                s[i].style.display = "none"
+            }
+        }
+        function rlad() {
+            // location.reload()
+            document.getElementById("main2").reset()
+        }
+        function next() {
+            Adress()
+        }   
+    </script>
+</body>
+
+</html>
